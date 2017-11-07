@@ -6,7 +6,7 @@
 list=[]
 list1=[]
 def findall(n):
-       while len(n) != 0:
+       while len(n) != 0:  #9-13行可以用string.split("hello")代替
            m = n.partition("hello")
            list.append(m[0])
            n=m[2]
@@ -16,7 +16,6 @@ def findall(n):
                list1.append(len(list[0]))
            else:
                sum = 0
-               m = 0
                for j in list[0:i+1]:
                    if len(j) == 0:
                        index = len(j)
@@ -24,7 +23,7 @@ def findall(n):
                        index = len(j) + 5
                    sum += index
                list1.append(sum)
-           print(list1)
+       print(list1)
 n = "helloworldhellopythonhelloc++hellojava"
 findall(n)
 """
