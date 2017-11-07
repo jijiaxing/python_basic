@@ -2,7 +2,12 @@
 # 要求返回符合要求的所有位置的起始下标，如字符串"helloworldhellopythonhelloc++hellojava"，
 # 需要找出里面所有的"hello"的位置，最后将返回一个元组(0,10,21,29)，即将h的下标全部返回出来，
 # 而find方法只能返回第一个
-#(字符串的find方法，返回从左往右找到的第一个符合条件的字符的下标)
+#(字符串的find方法，返回从左往右找到的第一个符合条件的字符的下标
+
+
+
+"""
+此种方法过于针对此提，不太适合大部分呢
 list=[]
 list1=[]
 def findall(n):
@@ -26,6 +31,7 @@ def findall(n):
        print(list1)
 n = "helloworldhellopythonhelloc++hellojava"
 findall(n)
+"""
 """
 def findall(f_string, string):
     list_index = []

@@ -21,6 +21,20 @@ def divide(*args):
         for n in args:
             sum /= n
     print(sum)
+def m_dev(*arg):
+    """
+    除法
+    :param arg:
+    """
+    result = arg[0]
+    index = 1
+    while index < len(arg):
+        if arg[index] == 0:
+            index += 1
+            continue
+        result /= arg[index]
+        index += 1
+    return result
 list = [1,2,3,4,5]
 plus(*list)
 minux(*list)
