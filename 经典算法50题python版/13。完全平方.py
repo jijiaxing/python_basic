@@ -8,3 +8,4 @@ for num in range(10000):
     b = math.sqrt(num + 100 + 168)
     if a // 1 == a and b // 1 == b:   #判断是不是整数
         print(num)
+

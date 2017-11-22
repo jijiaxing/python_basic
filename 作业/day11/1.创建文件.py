@@ -6,3 +6,16 @@ import os
 file = open(r"C:\Users\纪加兴\Desktop\hello.txt","w")
 file.write("hello world\n你好，中国")
 file.close()
+
+
+
+
+
+
+
+
+
+
+
+
+

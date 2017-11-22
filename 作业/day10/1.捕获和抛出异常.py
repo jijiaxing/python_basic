@@ -6,6 +6,7 @@
 def input_pwd():
     pwd = input("请输入密码：")
     if len(str(pwd)) != 6:
+
         ex = Exception("密码长度不够，请输入六位数字")
         raise ex
     if not pwd.isdecimal():

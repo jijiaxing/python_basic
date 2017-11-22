@@ -74,3 +74,21 @@ print(count_list)
 print("最大值是%s" % count_list[0])
 print("最小值是%s" % count_list[9])
 """
+"""
+import random
+list = []
+i = 0
+while i < 10:
+    x = random.randint(1, 100)
+    if x not in list:
+        list.append(x)
+        i += 1
+m = 0
+while m < 10:
+    for n in list[m+1: 10]:
+        if n > list[m]:
+            list[list.index(n)] = list[m]
+            list[m] = n
+    m += 1
+print(list)
+"""

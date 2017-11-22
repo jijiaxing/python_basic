@@ -20,6 +20,6 @@ def fonfbei(m,n):
     a = gongbeishu(m,n)
     print((m*n)/a)
 
-fonfbei(24,32)
+fonfbei(32,24)
 
 

@@ -1,6 +1,4 @@
 card_list = []
-
-
 def show_menu():
     print("*" * 50)
     print("欢迎使用【名片管理系统】v1.0")
@@ -11,8 +9,6 @@ def show_menu():
     print()
     print("0.退出系统")
     print("*" * 50)
-
-
 def add_cards():
     name_str = input("姓名：")
     tel_str = input("电话:")
