@@ -1,0 +1,93 @@
+
+ubuntu 中安装  sublime 3 , 从ubuntu 软件仓库安装
+
+	Sublime-Text-3:
+	
+	sudo add-apt-repository ppa:webupd8team/sublime-text-3
+	sudo apt-get update
+	sudo apt-get install sublime-text-installer
+	
+	sudo apt-get upgrade sublime-text-installer
+
+sublime 不能输入汉字时：** 以下方法只能让 sublime 在终端中以 subl 的方式启动时，可以输入汉字
+	
+	克隆项目到本地 :
+	git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+	进入目录\运行脚本 :
+	cd sublime-text-imfix 
+	sh ./sublime-imfix
+	
+	
+安装插件：( windows 版 与 linux 版 都是一样的操作 )
+
+1- 安装 Package Control：
+Package Control： 用于管理 sublime 中所有的插件,类似于 pip 与 python 的关系 
+
+通过View->Show Console菜单打开命令行，粘贴如下代码：
+
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+
+此时就可以在Preferences菜单下看到Package Settings和Package Control两个菜单了
+
+2. 安装 SublimeREPL 
+SublimeREPL 让sublime 可以运行，他所支持的各种程序。
+
+选择 Package Control 键入 install packages稍等片刻后 键入 SublimeREPL 安装即可通过选项Tools->SublimeREPL->Python就可以看到效果了
+
+2.1  安装 python 代码提示补全
+	选择 Package Control 键入 install packages稍等片刻后 键入 SublimeCodeIntel 安装完成即可
+
+
+3. 通过Tools->SublimeREPL->Python-RUN current file 即可运行当前文件，当然有点麻烦，有简单的方法
+
+3.1 使用系统默认快捷键：
+	ctrl + shift +b 选择 python ，即可运行，，以后也可以直接用 ctrl + b
+	* 默认的 ctrl + b 在input 函数输入内容时有BUG ，建议用 3.2 方式
+
+3.2 自定义快捷键：
+
+如：F1 按键直接运行。
+打开Preferences->Key Bindings-User，复制一下代码：
+{"keys": ["f1"], "command": "run_existing_window_command", "args":
+    {"id": "repl_python_run",
+     "file": "config/Python/Main.sublime-menu"
+    }
+},
+如果还想快速打开 ipython 继续添加：
+{
+        "keys": ["f2"],
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python_ipython",
+            "file": "config/Python/Main.sublime-menu"
+        }
+}
+Ctrl+s下就好了
+如果想设置其他操作，参考：
+C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Packages\SublimeREPL\config\Python\Default.sublime-commands 文件即可
+
+python2.sublime-build
+
+sublime 注册码：
+—– BEGIN LICENSE —–  
+TwitterInc  
+200 User License  
+EA7E-890007  
+1D77F72E 390CDD93 4DCBA022 FAF60790  
+61AA12C0 A37081C5 D0316412 4584D136  
+94D7F7D4 95BC8C1C 527DA828 560BB037  
+D1EDDD8C AE7B379F 50C9D69D B35179EF  
+2FE898C4 8E4277A8 555CE714 E1FB0E43  
+D5D52613 C3D12E98 BC49967F 7652EED2  
+9D2D2E61 67610860 6D338B72 5CF95C69  
+E36B85CC 84991F19 7575D828 470A92AB  
+—— END LICENSE —— 
+
+
+!! sublime 现在已知的 BUG:
+	默认的 ctrl + b 在input 函数输入内容时有BUG 
+	在执行多进程任务时，会出现 BUG 
+	
+
+
+

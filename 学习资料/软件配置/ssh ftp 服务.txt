@@ -1,0 +1,49 @@
+
+
+ubuntu 中内置了 ssh 客户端，但默认没有安装 ssh 服务器端,需要自己安装 
+
+要使用 ssh 服务
+
+	1- 安装 ssh 服务 ：
+		sudo apt-get install openssh-server
+		
+	2- 开启 ssh 服务
+		sudo service ssh start
+		
+	3- 重启 ssh 服务 
+		sudo service ssh restart
+		
+	4- 查看服务运行状态
+	
+		sudo service ssh status
+	
+
+	
+	
+	
+	
+	
+使用 ftp 服务：
+
+	apt-get install vsftpd 
+
+	安装完后，会自动启动 服务，然后就可以和服务器传资料了，
+	如果 filezilla 查看服务器乱码了：
+		文件 -- 站点管理 -- 编码集 ( 你可能先新建一个站点) ，改为 utf-8 即可
+		
+	上传文件：出错
+	550 Permission denied 
+	 
+	原因：vsftp默认配置不允许上传文件。
+	解决：修改/etc/vsftpd.conf
+	将“write_enable=YES”前面的#取消。
+
+	
+查询服务是否启动，：
+service vsftpd status
+
+service vsftpd start
+
+
+
+
